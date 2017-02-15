@@ -16,8 +16,25 @@ namespace TBAScraper
         {
             get
             {
-                return String.Empty;
+                var tupleString = "(";
+                foreach(var team in Teams)
+                {
+                    tupleString = tupleString + team + ",";
+                }
+                tupleString = tupleString.Remove(tupleString.Length - 1, 1) + ")";
+                return tupleString;
             }
+        }
+
+        public string SelectOption(int index)
+        {
+            var tupleString = index.ToString() + ": [";
+            foreach (var team in Teams)
+            {
+                tupleString = tupleString + team + ",";
+            }
+            tupleString = tupleString.Remove(tupleString.Length - 1, 1) + "]";
+            return tupleString;
         }
     }
 }
