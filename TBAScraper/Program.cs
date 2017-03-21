@@ -137,6 +137,7 @@ namespace TBAScraper
                 }
                 matches.Add(match);
             }
+            matches = matches.OrderBy(m => m.MatchNumber).ToList();
             return matches;
         }
     }
